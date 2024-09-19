@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    --accent-color: #084308;
+    --accent-color: #082d43;
     --base-color: white;
-    --text-color: #3e623e;
+    --text-color: #85b1f7;
     --input-color: #F3F0FF;
 }
 
@@ -21,40 +21,54 @@ html {
 
 body {
     min-height: 100vh;
-    background: url(background.jpg);
-    background-size: cover;
-    background-position: right;
+    position: relative;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('background.jpg') no-repeat right;
+    background-size: cover;
+    opacity: 1; /* Adjust the opacity (0 to 1) */
+    z-index: -1; /* Ensure the image is behind the content */
 }
 
 .wrap {
     box-sizing: border-box;
-    background-color: var(--base-color);
-    height: 100vh;
-    width: max(30%, 450px);
-    padding: 10px;
-    border-radius: 0 20px 20px 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Background for form */
+    height: auto;
+    width: max(10%, 400px); /* Responsive width */
+    padding:20px; /* Padding around form */
+    border-radius: 20px; /* Rounded corners */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 4px 10px rgba(4, 4, 4, 0.1); /* Optional: Shadow */
 }
 
 h1 {
     font-size: 2.4rem;
     font-weight: 800;
     text-transform: uppercase;
-    /* color: rgb(213, 174, 77); */
+    color: rgb(19, 100, 150);
 }
 
 form {
-    width: min(300px, 100%);
-    margin-top: 20px;
-    margin-bottom: 50px;
+    width: 100%; /* Takes full width of the container */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 15px; /* Adjust gap between fields */
 }
 
 form>div {
@@ -90,7 +104,7 @@ form input {
     border-left: none;
     background-color: var(--input-color);
     transition: 150ms ease;
-
+    
 }
 
 form input:hover {
@@ -101,7 +115,7 @@ form input:focus{
     border-color: var(--text-color);
 }
 div:has(input:focus) > label{
-    background-color: teal;
+    background-color:var(--text-color);
 }
 form input::placeholder{
     color: var(--text-color);
@@ -116,6 +130,7 @@ form button{
     color: var(--base-color);
     text-transform: uppercase;
     cursor: pointer;
+    font-weight: 600;
 }
 form button:hover{
     background-color: var(--text-color);
@@ -135,7 +150,7 @@ a:hover{
 
 @media(max-width:1000px)  {
     .wrap{
-     width: min(600px, 100%);
-     border-radius: 0;
+        width: min(600px, 100%);
+        border-radius: 0;
     }
 }
