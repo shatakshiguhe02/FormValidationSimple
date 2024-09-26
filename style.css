@@ -68,7 +68,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px; /* Adjust gap between fields */
+    gap: 10px; /* Adjust gap between fields */
 }
 
 form>div {
@@ -147,6 +147,7 @@ a:hover{
     text-decoration: underline;
     color: red;
 }
+
 
 @media(max-width:1000px)  {
     .wrap{
